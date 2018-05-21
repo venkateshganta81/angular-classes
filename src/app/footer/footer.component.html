@@ -1,0 +1,332 @@
+<div class="mainblock-btm col-xs-12 btstrp">
+
+    <div class="container">
+        <div class="row">
+
+            <div class="contact-main">
+
+                <div class="subscribe">
+
+                    <h2 *ngIf = "!subscribed" class="head-h2">SUBSCRIBE</h2>
+                    <p class="head-p" *ngIf = "!subscribed">
+                        Join our community of readers and stay tuned to our technology newsletter which talks about all emerging technologies like
+                        AI,
+                        <br/> ML and Blockchain. Fill out the form below and you will get a confirmation e-mail for your subscription.
+                    </p>
+
+                   <!--  <form [formGroup]="subscribeFormGroup" (ngSubmit)="userSubscribe()" *ngIf = "!subscribed">
+                        <div class="col-sm-3 col-xs-12 form-group pl-0">
+                            <input class="form-control text-field1" type="text" placeholder="First name" formControlName="firstName">
+                        </div>
+                        <div class="col-sm-3 col-xs-12 form-group">
+                            <input class="form-control text-field1" type="text" placeholder="Last Name" formControlName="lastName">
+                        </div>
+                        <div class="col-sm-3 col-xs-12 form-group">
+                            <input class="form-control text-field1" type="email" placeholder="Email" formControlName="email">
+                        </div>
+                        <div class="col-sm-2 col-xs-12 mar-rgt-space">
+                            <button type="submit" class="buttons">Subscribe</button>
+                        </div>
+                        <div class="clearfix"></div>
+                        <div class="checkbox col-sm-12 pl-0">
+                            <input id="checkbox1" type="checkbox" formControlName="agree">
+                            <label for="checkbox1">
+                                I agree to receive newsletters & promotional emails from MTW LABS & its Group Companies
+                            </label>
+                            <h4 *ngIf = "agreeTerms" class="subcribeTerms red">Please agree the Terms and conditions</h4>
+                        </div>
+                    </form>
+                    <div class="clearfix"></div>
+                    <div *ngIf= "subscriberValid" class="form-group red">
+                            Please enter valid inputs
+                    </div>
+                    <div *ngIf = "subscribed" class="subscription-text">
+                        <h4 style="color:green">
+                            Thanks for Subscribing , you will now be able to receive newsletter from us.
+                        </h4>
+                    </div>
+                </div>
+
+                <div class="contact">
+
+                    <h2 class="head-h2" *ngIf = "!leadGenerated">LET'S TALK</h2>
+
+                    <form *ngIf = "!leadGenerated" [formGroup]="leadGenerationFormGroup" (ngSubmit)="leads()">
+                        <div class=" pl-0 col-sm-6 col-xs-12">
+
+                            <div>
+                                <div class="form-group">
+                                    <input class="form-control text-field" type="text" placeholder="Name*" id="fname" formControlName = "name" >
+                                    <!-- <span style="color:red" *ngIf = "!leadGenerationFormGroup.get('name').valid && leadGenerationFormGroup.get('name').dirty">First name should not be Empty</span> -->
+                               <!-- </div>
+                            </div>
+
+                            <div>
+                                <div class="form-group">
+                                    <input class="form-control text-field" type="email" placeholder="Email*" id="femail" formControlName = "email" >
+                                </div>
+                            </div>
+
+                            <div>
+                                <div class="form-group">
+                                    <input class="form-control text-field" type="text" placeholder="Company/Organisation Name*" id="frequire" formControlName = "companyName">
+                                </div>
+                            </div>
+
+                            <div>
+                                <div class="form-group">
+                                    <select class="drop-sel" formControlName = "serviceIds">
+                                        <option disabled>Select Services</option>
+                                        <option>Growth Consulting</option>
+                                        <option>Product Development</option>
+                                        <option>Data Science</option>
+                                        <option>Cloud and DevOps</option>
+                                        <option>Block Chain</option>
+                                        <option>Code Camp</option>
+                                        <option>Corporate Training</option>
+                                        <option>Community</option>
+                                        <option>Other</option>
+                                    </select>
+                                </div>
+                            </div>
+
+                        </div>
+
+                        <div class="col-sm-6 col-xs-12 mar-rgt-space">
+
+                            <div>
+                                <div class="form-group">
+                                    <textarea class="form-control text-field text-area" rows="5" id="comment" placeholder="Comments" formControlName = "comments"></textarea>
+                                </div>
+                            </div>
+                            <div *ngIf= "leadGenFrom" class="form-group red">
+                                Please enter valid inputs
+                            </div>
+                            <div>
+                                <button type="submit" class="buttons">Send Enquiry</button>
+                            </div>
+
+                        </div>
+                    </form>
+ -->
+                    <div class="clearfix"></div>
+                    <div *ngIf = "leadGenerated" class="subscription-text">
+                        <h4  style="color:green">
+                            Thank you for showing interest in us , Our team will contact you soon
+                        </h4>
+                    </div>
+                </div>
+
+            </div>
+
+        </div>
+    </div>
+</div>
+<footer>
+    <div class="container">
+        <div class="row">
+            <div class="footer-top col-xs-12">
+                <ul>
+                    <li class="col-sm-3 col-xs-6">
+                        <h2 class="head-h2">Industries</h2>
+                        <div class="footer-cont">
+                            <ul>
+                                <li>
+                                    <a routerLink="./edtech">Ed-Tech</a>
+                                </li>
+                                <!-- <li>
+                                    <a routerLink="/">Healthcare</a>
+                                </li> -->
+                               <!--  <li>
+                                    <a routerLink="/">Digital Commerce</a>
+                                </li> -->
+                                <!-- <li>
+                                    <a routerLink="/">Logistics</a>
+                                </li>
+                                <li>
+                                    <a routerLink="/">BFSI</a>
+                                </li> -->
+                            </ul>
+                            <div class="clearfix"></div>
+                        </div>
+
+                    </li>
+
+                    <li class="col-sm-3 col-xs-6">
+                        <h2 class="head-h2">Services</h2>
+                        <div class="footer-cont">
+                            <ul>
+
+                                <li>
+                                    <a routerLink="./growth-consulting">Growth Consulting</a>
+                                </li>
+                                <li>
+                                    <a routerLink="./product-development">Product Development</a>
+                                </li>
+                                <li>
+                                    <a routerLink="./data-science">Data Science</a>
+                                </li>
+                                <!--  <li>
+                                    <a routerLink="/">Blockchain</a>
+                                </li> -->
+                                <li>
+                                    <a routerLink="./devops">Cloud &amp; DevOps</a>
+                                </li>
+                            </ul>
+                            <div class="clearfix"></div>
+                        </div>
+
+                    </li>
+
+                    <li class="col-sm-3 col-xs-6">
+                        <h2 class="head-h2">About</h2>
+                        <div class="footer-cont">
+                            <ul>
+                                <li>
+                                    <a routerLink="./about-us">Vision &amp; Mission</a>
+                                </li>
+                                <li>
+                                    <a routerLink="./about-us">Team</a>
+                                </li>
+                                <li>
+                                    <a routerLink="./about-us">Community/OpenSource</a>
+                                </li>
+                            </ul>
+                            <div class="clearfix"></div>
+                        </div>
+
+                    </li>
+
+                    <li class="col-sm-3 col-xs-6">
+                        <h2 class="head-h2">Careers</h2>
+                        <div class="footer-cont">
+                            <ul>
+                                <li>
+                                    <a routerLink="./careers">Internships</a>
+                                </li>
+                                <li>
+                                    <a routerLink="./careers">Remote Jobs</a>
+                                </li>
+                                <li>
+                                    <a routerLink="./careers">On-Site Jobs</a>
+                                </li>
+                                <li>
+                                    <a routerLink="./careers">Freelance with us</a>
+                                </li>
+                            </ul>
+                            <div class="clearfix"></div>
+                        </div>
+
+                    </li>
+
+                </ul>
+                <div class="clearfix"></div>
+            </div>
+
+            <div class="footer-top col-xs-12 no-bor">
+                <ul>
+
+                    <li class="col-sm-3 col-xs-6">
+                        <h2 class="head-h2">Contact Us</h2>
+                        <div class="footer-cont">
+                            <em>Call:
+                                <a href="tel:4030911018">+91 40 3091 1018 </a>
+                            </em>
+                            <em>Mail:
+                                <a href="mailto:mail@mtwlabs.com">mail@mtwlabs.com </a>
+                            </em>
+
+                            <div class="social-icons">
+
+                                <ul>
+                                    <li>
+                                        <a href="https://www.facebook.com/mtwlabs" target="_blank">
+                                            <!-- <i class="fa fa-facebook" aria-hidden="true"></i> -->
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="https://twitter.com/mtwlabs" target="_blank">
+                                            <!-- <i class="fa fa-twitter" aria-hidden="true"></i> -->
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="https://in.linkedin.com/company/mtw-labs" target="_blank">
+                                            <!-- <i class="fa fa-linkedin" aria-hidden="true"></i> -->
+                                        </a>
+                                    </li>
+                                    <li class="mar-rgt-space">
+                                        <a href="https://www.instagram.com/mtwlabs/" target="_blank">
+                                            <!-- <i class="fa fa-instagram" aria-hidden="true"></i> -->
+                                        </a>
+                                    </li>
+                                </ul>
+                                <div class="clearfix"></div>
+                            </div>
+
+                        </div>
+
+                    </li>
+
+                    <li class="col-sm-3 col-xs-6">
+                        <h2 class="head-h2">Locations</h2>
+                        <div class="footer-cont">
+                            <span>
+                                <b>Hyderabad</b> ( Head Office )</span>
+                            <address>
+                                <p>2nd and 3rd Floor, Plot No: 3-97,
+                                    <br> Ayyappa Society Lane, Madhapur
+                                    <br> Hyderabad, Telangana - 500081 </p>
+                            </address>
+                        </div>
+
+                    </li>
+
+                    <li class="col-sm-3 col-xs-6">
+                        <h2 class="head-h2 mobile-hide"></h2>
+                        <div class="footer-cont">
+                            <span>
+                                <b>Mumbai</b>
+                            </span>
+                            <address>
+                                <p>91springboard,
+                                    <br> 3rd Floor, Akshar Blue Chip IT Park,
+                                    <br> Turbhe MIDC, Turbhe,
+                                    <br> Navi Mumbai, Maharashtra 400705</p>
+                            </address>
+                        </div>
+
+                    </li>
+
+                    <li class="col-sm-3 col-xs-6">
+                        <h2 class="head-h2 mobile-hide"></h2>
+                        <div class="footer-cont">
+                            <span>
+                                <b>San Fransisco:</b>
+                            </span>
+                            <address>
+                                <p>1860 Mowry Ave Suite #200,
+                                    <br> Fremont, CA 04538, USA </p>
+                            </address>
+                        </div>
+
+                    </li>
+
+                </ul>
+
+                <div class="clearfix"></div>
+
+            </div>
+
+            <div class="copy">
+                <p class="head-p">Copyright 2018. All Rights Reserved.
+                    <a routerLink="null"> MTW LABS INNOVATIONS INDIA PVT LTD </a> .
+                    <a routerLink="null"> Privacy Policy </a> .
+                    <a routerLink="null"> Sitemap</a>
+                </p>
+            </div>
+
+
+        </div>
+    </div>
+
+</footer>
