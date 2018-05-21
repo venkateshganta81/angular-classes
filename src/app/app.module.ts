@@ -9,6 +9,7 @@ import { FooterComponent } from './footer/footer.component';
 import { GrowthComponent } from './services/growthConsulting/growthConsulting.component';
 import { ServicesComponent } from './services/services.component';
 import { HomePageComponent } from './home/home.component';
+import { NewLearning } from './new/new.component';
 
 
 
@@ -18,7 +19,8 @@ const router : Routes = [
   { path : 'services' , component : ServicesComponent , children :[
     { path : '' , redirectTo: '/services/growth-consulting' , pathMatch:'full'},
     { path : 'growth-consulting' , component : GrowthComponent }
-  ] }
+  ] },
+  { path : 'new' , component : NewLearning }
 ]
 
 
@@ -30,7 +32,8 @@ const router : Routes = [
     FooterComponent,
     GrowthComponent,
     ServicesComponent,
-    HomePageComponent
+    HomePageComponent,
+    NewLearning
     
   ],
   imports: [

@@ -1,0 +1,14 @@
+<div  style="color:#000">
+   <ul>
+    <li *ngFor = "let data of display; let i=index;">
+        <div *ngIf="data.age > 25">
+            {{i + 1 + '.'}} {{data.name}} {{data.age}}
+        </div>
+       </li>
+   </ul>
+</div>
+
+<ng-template ngFor let-display [ngForOf]="display" let-i="index" style="color:#000">
+    {{i + 1 + '.'}} {{display.name}} {{display.age}}
+</ng-template>
+
