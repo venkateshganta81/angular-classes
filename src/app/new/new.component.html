@@ -1,14 +1,27 @@
 <div  style="color:#000">
    <ul>
     <li *ngFor = "let data of display; let i=index;">
-        <div *ngIf="data.age > 25">
+        <div  [ngClass]="data.isAged" class="hello">
             {{i + 1 + '.'}} {{data.name}} {{data.age}}
         </div>
+        <div [ngStyle]="{ 'height': '400px', 'color' : 'blue' , 'background-color' : 'red' }">
+
+        </div>
+        <!-- <div  [ngClass]="{ 'age' : data.isAged == 'aged' , 'name' : data.name }">
+            {{i + 1 + '.'}} {{data.name}} {{data.age}}
+        </div> -->
+        <!-- <ng-template [ngIf]="data.age">
+           Hello {{i + 1 + '.'}} {{data.name}} {{data.age}}
+        </ng-template> -->
        </li>
    </ul>
 </div>
 
-<ng-template ngFor let-display [ngForOf]="display" let-i="index" style="color:#000">
+
+
+
+
+<!-- <ng-template ngFor let-display [ngForOf]="display" let-i="index" style="color:#000">
     {{i + 1 + '.'}} {{display.name}} {{display.age}}
-</ng-template>
+</ng-template> -->
 
