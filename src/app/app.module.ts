@@ -11,6 +11,8 @@ import { ServicesComponent } from './services/services.component';
 import { HomePageComponent } from './home/home.component';
 import { NewLearning } from './new/new.component';
 
+import { FormsModule , ReactiveFormsModule } from '@angular/forms'
+
 
 
 const router : Routes = [
@@ -38,7 +40,9 @@ const router : Routes = [
   ],
   imports: [
     BrowserModule,
-    RouterModule.forRoot(router)
+    RouterModule.forRoot(router),
+    FormsModule,
+    ReactiveFormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

@@ -1,20 +1,57 @@
-<div  style="color:#000">
-   <ul>
-    <li *ngFor = "let data of display; let i=index;">
-        <div  [ngClass]="data.isAged" class="hello">
-            {{i + 1 + '.'}} {{data.name}} {{data.age}}
-        </div>
-        <div [ngStyle]="{ 'height': '400px', 'color' : 'blue' , 'background-color' : 'red' }">
+<div>
+   <!--  <table class="table table-bordered" style="color:#000">
+        <thead>
+            <tr>
+                <th>
+                    Type
+                </th>
+                <th>
+                    Name
+                </th>
+                <th>
+                    Batters
+                </th>
+                <th>
+                    Toppings
+                </th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let item of items">
+                <td>
+                    {{item.type}}
+                </td>
+                <td>
+                    {{item.name}}
+                </td>
+                <td>
+                    <ul>
+                        <li *ngFor="let batter of item.batters.batter">
+                            {{batter.type}}
+                        </li>
+                    </ul>
+                </td>
+                <td>
+                    <ul>
+                        <li *ngFor="let tops of item.topping">
+                            {{tops.type}}
+                        </li>
+                    </ul>
+                </td>
+            </tr>
+        </tbody>
+    </table> -->
+    <img [src] = "assignedImage" alt="Image" class="img-responsive">
+    <button (click)="clickFunction()">Click it</button>
+    <div class="col-sm-3">
+<!-- <form [formGroup]="someFormGroup">
+    <div class="form-group">
+        <input class="form-control" formControlName="email">
+    </div>
+</form> -->
 
-        </div>
-        <!-- <div  [ngClass]="{ 'age' : data.isAged == 'aged' , 'name' : data.name }">
-            {{i + 1 + '.'}} {{data.name}} {{data.age}}
-        </div> -->
-        <!-- <ng-template [ngIf]="data.age">
-           Hello {{i + 1 + '.'}} {{data.name}} {{data.age}}
-        </ng-template> -->
-       </li>
-   </ul>
+        <input class="form-control" [(ngModel)]="exampleBinding" type="text">
+    </div>
 </div>
 
 
