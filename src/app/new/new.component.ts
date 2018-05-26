@@ -1,6 +1,10 @@
 import { Component, OnInit } from '@angular/core';
 import { FormsModule, FormGroup, FormControl, Validators } from '@angular/forms';
 import { variable } from '@angular/compiler/src/output/output_ast';
+import Swal from 'sweetalert2'
+import { LoginService } from '../app.service';
+import { Response } from '@angular/http';
+
 
 @Component({
     selector: 'new-component',
@@ -15,8 +19,26 @@ export class NewLearning implements OnInit {
     public assignedImage : any;
     public assign : boolean = true;
     public exampleBinding : any;
+    public email : any;
+    public password : any;
+    public userDetails;
+    public user;
 
     someFormGroup : FormGroup;
+
+    constructor(
+        private loginService : LoginService
+    ){}
+
+    validationAlert(text,type){
+        Swal({
+            title: 'Login',
+            text: text,
+            type: type,
+            showConfirmButton: false,
+            timer : 1500
+          })
+    }
 
     ngOnInit() {
         /* this.display = [{
@@ -126,6 +148,31 @@ export class NewLearning implements OnInit {
             'height': window.innerHeight + 'px',
             'background-color': 'red'
         };
+    }
+
+    login(){
+        if(!this.email){
+            this.validationAlert("Please Enter Email Address" , 'error')
+        }else if(!this.password){
+            this.validationAlert("Please Enter password" , 'error')
+        }else{
+            this.userDetails = {
+                email : this.email,
+                password : this.password
+            }
+            this.loginService.login(this.userDetails)
+                .subscribe(
+                    (response : Response) => {
+                        console.log(response.json());
+                        this.user = response.json();
+                        if(this.user.status){
+                            this.validationAlert( this.user.message , 'success' )
+                        }else{
+                            this.validationAlert( this.user.message , 'error' )
+                        }
+                    }
+                )
+        }
     }
 
 }

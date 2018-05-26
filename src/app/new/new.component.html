@@ -43,6 +43,7 @@
     </table> -->
     <img [src] = "assignedImage" alt="Image" class="img-responsive">
     <button (click)="clickFunction()">Click it</button>
+    <div class="clearfix"></div>
     <div class="col-sm-3">
 <!-- <form [formGroup]="someFormGroup">
     <div class="form-group">
@@ -50,7 +51,15 @@
     </div>
 </form> -->
 
-        <input class="form-control" [(ngModel)]="exampleBinding" type="text">
+        <div class="form-group">
+            <input class="form-control" [(ngModel)]="email" type="email">
+        </div>
+        <div class="form-group">
+            <input class="form-control" [(ngModel)]="password" type="password">
+        </div>
+        <div class="form-group">
+            <input class="form-control"  type="submit" (click) = "login();">
+        </div>
     </div>
 </div>
 

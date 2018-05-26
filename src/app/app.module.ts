@@ -11,7 +11,9 @@ import { ServicesComponent } from './services/services.component';
 import { HomePageComponent } from './home/home.component';
 import { NewLearning } from './new/new.component';
 
-import { FormsModule , ReactiveFormsModule } from '@angular/forms'
+import { FormsModule , ReactiveFormsModule } from '@angular/forms';
+import { LoginService } from './app.service';
+import {  HttpModule } from '@angular/http';
 
 
 
@@ -42,9 +44,10 @@ const router : Routes = [
     BrowserModule,
     RouterModule.forRoot(router),
     FormsModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    HttpModule
   ],
-  providers: [],
+  providers: [LoginService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
