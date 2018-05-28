@@ -1,9 +1,10 @@
 import { Component, OnInit } from '@angular/core';
 import { FormsModule, FormGroup, FormControl, Validators } from '@angular/forms';
 import { variable } from '@angular/compiler/src/output/output_ast';
-import Swal from 'sweetalert2'
+/* import Swal from 'sweetalert2' */
 import { LoginService } from '../app.service';
 import { Response } from '@angular/http';
+import { Router } from '@angular/router';
 
 
 @Component({
@@ -24,10 +25,11 @@ export class NewLearning implements OnInit {
     public userDetails;
     public user;
 
-    someFormGroup : FormGroup;
+    loginForm : FormGroup;
 
     constructor(
-        private loginService : LoginService
+        private loginService : LoginService,
+        private route : Router
     ){}
 
     validationAlert(text,type){
@@ -56,8 +58,9 @@ export class NewLearning implements OnInit {
         }]  */
         this.imageUrl = ["./assets/images/ai-img1.png","./assets/images/ai-img2.png"];
         this.assignedImage = this.imageUrl[0];
-        this.someFormGroup = new FormGroup({
-            email : new FormControl('null',[Validators.required,Validators.email])
+        this.loginForm = new FormGroup({
+            email : new FormControl(null,[Validators.required,Validators.email]),
+            password : new FormControl(null,Validators.required)
         })
         this.items = [
             {
@@ -150,7 +153,7 @@ export class NewLearning implements OnInit {
         };
     }
 
-    login(){
+    /* login(){
         if(!this.email){
             this.validationAlert("Please Enter Email Address" , 'error')
         }else if(!this.password){
@@ -162,7 +165,7 @@ export class NewLearning implements OnInit {
             }
             this.loginService.login(this.userDetails)
                 .subscribe(
-                    (response : Response) => {
+                    (response) => {
                         console.log(response.json());
                         this.user = response.json();
                         if(this.user.status){
@@ -173,6 +176,23 @@ export class NewLearning implements OnInit {
                     }
                 )
         }
+    } */
+
+    login(){
+        if(this.loginForm.valid){
+            this.loginService.login(this.loginForm.value)
+                .subscribe((loginResponse)=>{
+                    
+                    this.user = loginResponse.json();
+                    if(this.user.status){
+                        this.route.navigate(['/user/dashboard']);
+                    }
+                })
+
+        }else{
+
+        }
+        console.log(this.loginForm);
     }
 
 }

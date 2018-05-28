@@ -12,4 +12,12 @@ export class LoginService{
     login(user){
         return this.http.post("http://localhost:3500/v1/user/login",user);
     }
+
+
+
+    /* 
+    Services
+    http ---> get , post ,put , delete
+    data ----> Format
+     */
 }
