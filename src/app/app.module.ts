@@ -14,6 +14,9 @@ import { NewLearning } from './new/new.component';
 import { FormsModule , ReactiveFormsModule } from '@angular/forms';
 import { LoginService } from './app.service';
 import {  HttpModule } from '@angular/http';
+import { RegistrationComponent } from './registration/registration.component';
+import { LoginComponent } from './login/login.component';
+import { ProfileComponent } from './profile/profile.component';
 
 
 
@@ -24,7 +27,10 @@ const router : Routes = [
     { path : '' , redirectTo: '/services/growth-consulting' , pathMatch:'full'},
     { path : 'growth-consulting' , component : GrowthComponent }
   ] },
-  { path : 'new' , component : NewLearning }
+  { path : 'new' , component : NewLearning },
+  { path : 'register' , component : RegistrationComponent },
+  { path : 'login' , component : LoginComponent },
+  { path : 'profile' , component : ProfileComponent }
 ]
 
 
@@ -37,8 +43,10 @@ const router : Routes = [
     GrowthComponent,
     ServicesComponent,
     HomePageComponent,
-    NewLearning
-    
+    NewLearning,
+    RegistrationComponent,
+    LoginComponent,
+    ProfileComponent
   ],
   imports: [
     BrowserModule,
