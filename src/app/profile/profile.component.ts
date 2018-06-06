@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { LoginService } from '../app.service';
 
 @Component({
   selector: 'app-profile',
@@ -7,9 +8,21 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ProfileComponent implements OnInit {
 
-  constructor() { }
+  constructor(
+    private loginService : LoginService
+  ) { }
 
   ngOnInit() {
+    this.getCurrencyDetails();
+  }
+
+  getCurrencyDetails(){
+    this.loginService.currencyData()
+      .subscribe(
+        (response)=>{
+          console.log(response.json());
+        }
+      )
   }
 
 }

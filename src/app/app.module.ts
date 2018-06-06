@@ -17,6 +17,8 @@ import {  HttpModule } from '@angular/http';
 import { RegistrationComponent } from './registration/registration.component';
 import { LoginComponent } from './login/login.component';
 import { ProfileComponent } from './profile/profile.component';
+import { FilterPipe } from './app.filterPipe';
+import { AuthGaurd } from './app.authgaurd';
 
 
 
@@ -30,7 +32,8 @@ const router : Routes = [
   { path : 'new' , component : NewLearning },
   { path : 'register' , component : RegistrationComponent },
   { path : 'login' , component : LoginComponent },
-  { path : 'profile' , component : ProfileComponent }
+  { path : 'profile' , component : ProfileComponent , canActivate : [AuthGaurd] },
+  /* { path : 'chapters/:id' ,component: SomeComponent } */
 ]
 
 
@@ -46,7 +49,8 @@ const router : Routes = [
     NewLearning,
     RegistrationComponent,
     LoginComponent,
-    ProfileComponent
+    ProfileComponent,
+    FilterPipe
   ],
   imports: [
     BrowserModule,
@@ -55,7 +59,7 @@ const router : Routes = [
     ReactiveFormsModule,
     HttpModule
   ],
-  providers: [LoginService],
+  providers: [LoginService,AuthGaurd],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
