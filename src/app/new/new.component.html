@@ -41,16 +41,22 @@
             </tr>
         </tbody>
     </table> -->
-    <img [src] = "assignedImage" alt="Image" class="img-responsive">
+    <!-- <img [src] = "assignedImage" alt="Image" class="img-responsive">
     <button (click)="clickFunction()">Click it</button>
     <div class="clearfix"></div>
-    <div class="col-sm-3">
+    <div class="col-sm-3"> -->
     <form [formGroup]="loginForm" (ngSubmit)="login()">
         <div class="form-group">
             <input class="form-control" formControlName="email" placeholder="Email">
+            <!-- <span *ngIf="!loginForm.controls['email'].valid && !/^\S+@\S+\.\S+/.test(this.loginForm.get('email')" style="color: red;">
+                Please Enter valid Email
+            </span> -->
         </div>
         <div class="form-group">
             <input class="form-control" formControlName = "password" placeholder="Password">
+            <!-- <span>
+                Please Enter password
+            </span> -->
         </div>
         <div class="form-group">
             <button class="btn btn-primary" type="submit" role="button">Login</button>
@@ -66,7 +72,7 @@
         <div class="form-group">
             <input class="form-control"  type="submit" (click) = "login();">
         </div> -->
-    </div>
+    <!-- </div> -->
 </div>
 
 

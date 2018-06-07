@@ -1,0 +1,9 @@
+<div class="col-sm-12">
+  <div class="col-sm-4" *ngFor="let movie of movies">
+    <div>
+      <a [routerLink]="'/movies/'+ movie.id">
+        {{movie.language}} {{movie.name}} {{movie.genere}}
+      </a>
+    </div>
+  </div>
+</div>

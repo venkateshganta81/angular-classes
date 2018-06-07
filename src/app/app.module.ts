@@ -19,12 +19,13 @@ import { LoginComponent } from './login/login.component';
 import { ProfileComponent } from './profile/profile.component';
 import { FilterPipe } from './app.filterPipe';
 import { AuthGaurd } from './app.authgaurd';
-
+import { MoviesComponent } from './movies/movies.component';
+import { MoviedetailsComponent } from './moviedetails/moviedetails.component';
 
 
 const router : Routes = [
   { path : 'home' , component : HomePageComponent},
-  { path : '' , redirectTo:'/home' , pathMatch:'full' },
+  { path : '' , redirectTo:'/login' , pathMatch:'full' },
   { path : 'services' , component : ServicesComponent , children :[
     { path : '' , redirectTo: '/services/growth-consulting' , pathMatch:'full'},
     { path : 'growth-consulting' , component : GrowthComponent }
@@ -33,7 +34,8 @@ const router : Routes = [
   { path : 'register' , component : RegistrationComponent },
   { path : 'login' , component : LoginComponent },
   { path : 'profile' , component : ProfileComponent , canActivate : [AuthGaurd] },
-  /* { path : 'chapters/:id' ,component: SomeComponent } */
+  { path : 'movies' ,component: MoviesComponent },
+  { path : 'movies/:id', component : MoviedetailsComponent }
 ]
 
 
@@ -50,7 +52,9 @@ const router : Routes = [
     RegistrationComponent,
     LoginComponent,
     ProfileComponent,
-    FilterPipe
+    FilterPipe,
+    MoviesComponent,
+    MoviedetailsComponent
   ],
   imports: [
     BrowserModule,

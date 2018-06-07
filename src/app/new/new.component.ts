@@ -179,7 +179,13 @@ export class NewLearning implements OnInit {
     } */
 
     login(){
-        if(this.loginForm.valid){
+
+        /* if(!/^\S+@\S+\.\S+/.test(this.loginForm.value.email)){
+           
+        } */
+        console.log(this.loginForm)
+
+        /* if(this.loginForm.valid){
             this.loginService.login(this.loginForm.value)
                 .subscribe((loginResponse)=>{
                     
@@ -192,7 +198,7 @@ export class NewLearning implements OnInit {
         }else{
 
         }
-        console.log(this.loginForm);
+        console.log(this.loginForm); */
     }
 
 }
