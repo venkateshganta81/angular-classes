@@ -25,7 +25,7 @@ import { MoviedetailsComponent } from './moviedetails/moviedetails.component';
 
 const router : Routes = [
   { path : 'home' , component : HomePageComponent},
-  { path : '' , redirectTo:'/login' , pathMatch:'full' },
+  { path : '' , redirectTo:'/home' , pathMatch:'full' },
   { path : 'services' , component : ServicesComponent , children :[
     { path : '' , redirectTo: '/services/growth-consulting' , pathMatch:'full'},
     { path : 'growth-consulting' , component : GrowthComponent }

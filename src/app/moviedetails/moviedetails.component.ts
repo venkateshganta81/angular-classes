@@ -37,18 +37,18 @@ export class MoviedetailsComponent implements OnInit {
     language : '',
     genere : ''
   };
+  public name;
   public id;
   ngOnInit() {
     this.route.params.subscribe((params)=>{
       this.id = params['id'];
-      console.log(this.id);
     })
     this.filter();
   }
 
   filter(){
     for(var i=0;i<this.movies.length ; i++){
-      if(this.id == this.movies[i].id){
+      if(this.name == this.movies[i].name || this.id == this.movies[i].id ){
         this.movie.movieName = this.movies[i].name;
         this.movie.language = this.movies[i].language;
         this.movie.genere = this.movies[i].genere;

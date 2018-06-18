@@ -1,9 +1,42 @@
 <div class="col-sm-12">
-  <div class="col-sm-4" *ngFor="let movie of movies">
-    <div>
-      <a [routerLink]="'/movies/'+ movie.id">
-        {{movie.language}} {{movie.name}} {{movie.genere}}
+  <!-- <div class="col-sm-4" style="margin-top: 20px;color:red;font-size: 24px" *ngFor="let movie of movies">
+    <div style="border:1px solid #ccc; padding:20px;">
+      <a [routerLink]="'/movies/'+movie.id + '/' + movie.name">
+        <ul class="list-unstyle">
+          <li>
+           Language : {{movie.language}} 
+          </li>
+          <li>
+           Movie Name: {{movie.name}} 
+          </li>
+          <li>
+            Genere :{{movie.genere}}
+          </li>
+        </ul>
       </a>
     </div>
+  </div> -->
+
+
+  <div class="clearfix"></div>
+
+  <div *ngIf="movieData" style="margin-top: 20px;color:red;font-size: 24px">
+
+    <ul class="list-unstyle" *ngFor="let movie of movieData">
+      <a [routerLink]="'/movies/'+movie.id">
+        <li>
+          Language : {{movie.language}}
+        </li>
+        <li>
+          Movie Name: {{movie.name}}
+        </li>
+        <li>
+          Genere :{{movie.genere}}
+        </li>
+        <li>
+          Availability : {{movie.tickets}}
+        </li>
+      </a>
+    </ul>
   </div>
 </div>

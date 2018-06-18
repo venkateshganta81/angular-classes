@@ -29,7 +29,9 @@ export class LoginService{
         return this.http.post("http://localhost:3500/v1/user/getUserDetails",{headers : headers},userId);
     }
 
-
+    getstatus(){
+        return this.http.get("http://localhost:3500/v1/user/getStatus");
+    }
     
 
 
